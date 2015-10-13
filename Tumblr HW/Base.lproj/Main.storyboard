@@ -1,25 +1,346 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Custom Tab View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
-                    </layoutGuides>
+                <viewController id="vXZ-lx-hvc" customClass="CustomTabViewController" customModule="Tumblr_HW" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="RPs-PO-ex0">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="hPP-Np-KEU">
+                                        <rect key="frame" x="0.0" y="-28" width="60" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="home_icon">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" image="home_selected_icon"/>
+                                        <connections>
+                                            <action selector="didPressTab:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Dhw-cr-vmr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gok-r3-T5M">
+                                        <rect key="frame" x="76" y="4" width="35" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="search_icon">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" image="search_selected_icon"/>
+                                        <connections>
+                                            <action selector="didPressTab:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="B6g-Vk-T6A"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="i1f-IC-D6c">
+                                        <rect key="frame" x="135" y="5" width="50" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="compose_button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressTab:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="YBU-37-1rv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aQd-5r-ERu">
+                                        <rect key="frame" x="267" y="5" width="35" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="trending_icon">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" image="trending_selected_icon"/>
+                                        <connections>
+                                            <action selector="didPressTab:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="sBZ-cb-dP1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="y0W-9K-PrG">
+                                        <rect key="frame" x="202" y="-240" width="51" height="524"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="account_icon">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected" image="account_selected_icon"/>
+                                        <connections>
+                                            <action selector="didPressTab:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="FWT-Z0-cfY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.19904767784469621" green="0.26182112613523723" blue="0.35814788510101003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="imW-DZ-VoD">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="explore_popup" id="Jgi-Ac-cc7">
+                                        <rect key="frame" x="8" y="452" width="185" height="77"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="contentView" destination="imW-DZ-VoD" id="2RU-ug-oGU"/>
+                        <outlet property="explorePopover" destination="Jgi-Ac-cc7" id="DVW-jW-kZt"/>
+                        <outletCollection property="buttons" destination="hPP-Np-KEU" collectionClass="NSMutableArray" id="bgi-ra-Bl9"/>
+                        <outletCollection property="buttons" destination="gok-r3-T5M" collectionClass="NSMutableArray" id="BwP-lD-KLV"/>
+                        <outletCollection property="buttons" destination="i1f-IC-D6c" collectionClass="NSMutableArray" id="YWb-c6-1b4"/>
+                        <outletCollection property="buttons" destination="y0W-9K-PrG" collectionClass="NSMutableArray" id="4pL-tg-4b2"/>
+                        <outletCollection property="buttons" destination="aQd-5r-ERu" collectionClass="NSMutableArray" id="9cR-oa-zSL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="180" y="406"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="bmu-Se-NFB">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" title="Home" id="3bd-y9-xAP" customClass="HomeViewController" customModule="Tumblr_HW" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dhl-M0-R9a">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="home" id="PuV-eh-BlY">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="home_spinner" id="0ie-w1-JhU">
+                                <rect key="frame" x="87" y="166" width="146" height="146"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="home_overlay" id="1ob-Ka-ipa">
+                                <rect key="frame" x="0.0" y="260" width="320" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qPn-kh-Nwg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="533" y="406"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="htR-jD-YJ4">
+            <objects>
+                <viewController storyboardIdentifier="SearchViewController" title="Search" id="B8Z-oH-153" customClass="SearchViewController" customModule="Tumblr_HW" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DVb-A9-38u">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="search_feed" id="WgJ-GZ-Y93">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xQm-f0-da3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="882" y="406"/>
+        </scene>
+        <!--Compose-->
+        <scene sceneID="K53-ye-iOQ">
+            <objects>
+                <viewController storyboardIdentifier="composeViewController" title="Compose" id="jVH-Gd-mxO" customClass="composeViewController" customModule="Tumblr_HW" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a0j-7S-e7E">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="I0Q-n7-cG5">
+                                <rect key="frame" x="16" y="129" width="75" height="101"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="chat_icon">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6pS-BL-GaI">
+                                <rect key="frame" x="229" y="129" width="75" height="95"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="text_icon">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pG9-6t-bmW">
+                                <rect key="frame" x="-12" y="253" width="130" height="95"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="video_icon">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="A63-3I-xqh">
+                                <rect key="frame" x="123" y="129" width="75" height="95"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="photo_icon">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jQL-za-xUv">
+                                <rect key="frame" x="123" y="253" width="75" height="96"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="quote_icon">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9UV-gG-GkO">
+                                <rect key="frame" x="229" y="253" width="75" height="95"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="link_icon">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qPT-1x-phN">
+                                <rect key="frame" x="-27" y="476" width="375" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="nevermind">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nevermind:" destination="jVH-Gd-mxO" eventType="touchUpInside" id="lvd-YC-cmj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.13906359615167388" green="0.19059605277016095" blue="0.26853855652109326" alpha="0.73999999999999999" colorSpace="calibratedRGB"/>
+                    </view>
+                    <connections>
+                        <outlet property="chat" destination="I0Q-n7-cG5" id="shw-cd-8jE"/>
+                        <outlet property="link" destination="9UV-gG-GkO" id="FlV-M2-W4L"/>
+                        <outlet property="photo" destination="A63-3I-xqh" id="Esr-5v-TM3"/>
+                        <outlet property="quote" destination="jQL-za-xUv" id="90O-i0-RoA"/>
+                        <outlet property="text" destination="6pS-BL-GaI" id="vMc-aH-Brr"/>
+                        <outlet property="vide" destination="pG9-6t-bmW" id="otm-To-JnQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SG6-Bw-Ewe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1238" y="406"/>
+        </scene>
+        <!--Account-->
+        <scene sceneID="xnC-1h-WDI">
+            <objects>
+                <viewController storyboardIdentifier="AccountViewController" title="Account" id="y1r-aX-Mzz" customClass="AccountViewController" customModule="Tumblr_HW" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8CH-ph-zFM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="account" id="WGE-OV-oNP">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="afo-iI-TfW">
+                                <rect key="frame" x="171" y="353" width="102" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="wnc-EZ-ZaN" kind="modal" id="Ny0-bQ-qAe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nwF-cJ-qCQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1595" y="406"/>
+        </scene>
+        <!--Trending-->
+        <scene sceneID="2Bx-BS-G32">
+            <objects>
+                <viewController storyboardIdentifier="TrendingViewController" title="Trending" id="tya-bb-e6Z" customClass="TrendingViewController" customModule="Tumblr_HW" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cug-Zw-vnP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="p1L-tu-IjH">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="trending_feed" id="oQw-qV-r3h">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1217"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                    </imageView>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pxw-vO-yJ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1944" y="406"/>
+        </scene>
+        <!--Log In-->
+        <scene sceneID="F85-pe-atj">
+            <objects>
+                <viewController storyboardIdentifier="LogInViewController" title="Log In" id="wnc-EZ-ZaN" customClass="LogInViewController" customModule="Tumblr_HW" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a7D-en-VmO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="login_form" id="Rbk-Fg-L31">
+                                <rect key="frame" x="10" y="187" width="300" height="132"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="AAc-Re-J2M">
+                                <rect key="frame" x="10" y="187" width="310" height="132"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissButton:" destination="wnc-EZ-ZaN" eventType="touchUpInside" id="ag2-Xp-J25"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14901960784313725" green="0.20392156862745098" blue="0.28627450980392155" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3jV-QG-wnf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1595" y="1090"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="account" width="320" height="524"/>
+        <image name="account_icon" width="35" height="35"/>
+        <image name="account_selected_icon" width="35" height="35"/>
+        <image name="chat_icon" width="75" height="96"/>
+        <image name="compose_button" width="50" height="35"/>
+        <image name="explore_popup" width="185" height="77"/>
+        <image name="home" width="320" height="524"/>
+        <image name="home_icon" width="35" height="35"/>
+        <image name="home_overlay" width="320" height="100"/>
+        <image name="home_selected_icon" width="35" height="35"/>
+        <image name="home_spinner" width="146" height="146"/>
+        <image name="link_icon" width="75" height="95"/>
+        <image name="login_form" width="300" height="132"/>
+        <image name="nevermind" width="320" height="53"/>
+        <image name="photo_icon" width="75" height="95"/>
+        <image name="quote_icon" width="75" height="96"/>
+        <image name="search_feed" width="320" height="524"/>
+        <image name="search_icon" width="35" height="35"/>
+        <image name="search_selected_icon" width="35" height="35"/>
+        <image name="text_icon" width="75" height="95"/>
+        <image name="trending_feed" width="320" height="1217"/>
+        <image name="trending_icon" width="35" height="35"/>
+        <image name="trending_selected_icon" width="35" height="35"/>
+        <image name="video_icon" width="75" height="95"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>
